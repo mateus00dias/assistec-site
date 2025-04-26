@@ -506,6 +506,9 @@ h6 {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .partner-card:hover {
