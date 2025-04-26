@@ -6,14 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body
 
   menuToggle.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("active")) {
+      mobileMenu.classList.remove("active")
+      body.style.overflow = ""
+      return
+    }
     mobileMenu.classList.add("active")
     body.style.overflow = "hidden"
   })
 
-  menuClose.addEventListener("click", () => {
-    mobileMenu.classList.remove("active")
-    body.style.overflow = ""
-  })
 
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
