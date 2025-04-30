@@ -329,13 +329,14 @@
           <ul class="contact-info-list">
             <li class="contact-info-item">
               <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=5533988488458" target="_blank"
-                aria-label="Botão WhatsApp">
+                aria-label="Botão WhatsApp" rel="noopener noreferrer">
                 <i class="fas fa-phone"></i>
                 <span>(33) 98848-8458</span>
               </a>
             </li>
             <li class="contact-info-item">
-              <a class="email-link" href="mailto:vendas@assistecmg.com.br" target="_blank" aria-label="Botão E-mail">
+              <a class="email-link" href="mailto:vendas@assistecmg.com.br" target="_blank" aria-label="Botão E-mail"
+                rel="noopener">
                 <i class="fas fa-envelope"></i>
                 <span>vendas@assistecmg.com.br</span>
               </a>
@@ -345,11 +346,12 @@
               <span>Av. Milton Campos, 2582 - Centro<br>Guanhães - MG</span>
             </li>
           </ul>
-          <iframe aria-label="Mapa do Google com localização da Assistec"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8057291507166!2d-42.939369889694726!3d-18.77129168272264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae4b4e9b98d9ff%3A0xac4ee7e24efcb90!2sAv.%20Milton%20Campos%2C%202582%20-%20Centro%2C%20Guanh%C3%A3es%20-%20MG%2C%2039740-000!5e0!3m2!1spt-BR!2sbr!4v1714085178124!5m2!1spt-BR!2sbr"
-            width="500" height="380" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <div class="map-container">
+            <iframe aria-label="Mapa do Google com localização da Assistec"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8057291507166!2d-42.939369889694726!3d-18.77129168272264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae4b4e9b98d9ff%3A0xac4ee7e24efcb90!2sAv.%20Milton%20Campos%2C%202582%20-%20Centro%2C%20Guanh%C3%A3es%20-%20MG%2C%2039740-000!5e0!3m2!1spt-BR!2sbr!4v1714085178124!5m2!1spt-BR!2sbr"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
         <form class="contact-form" autocomplete="off">
           <label for="nome">Nome</label>
@@ -377,31 +379,39 @@
             Soluções de TI gerenciadas para empresas que buscam segurança, eficiência e tranquilidade.
           </p>
           <div class="footer-social">
-            <a href="/#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="/#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="/#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/assistecmg/?locale=pt_BR" class="social-link" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="http://instagram.com/assistecmg" class="social-link" aria-label="Instagram" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <!-- <a href="/#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in"></i>
+            </a> -->
           </div>
         </div>
 
         <div class="footer-links">
           <h3 class="footer-title">Serviços</h3>
           <ul class="footer-menu">
-            <li><a href="/assistec-site/#">TI Gerenciada</a></li>
-            <li><a href="/assistec-site/#">Segurança da Informação</a></li>
-            <li><a href="/assistec-site/#">Suporte Técnico</a></li>
-            <li><a href="/assistec-site/#">Consultoria em TI</a></li>
-            <li><a href="/assistec-site/#">Backup e Recuperação</a></li>
+            <li><a href="#" aria-label="TI Gerenciada">TI Gerenciada</a></li>
+            <li><a href="#" aria-label="Segurança da Informação">Segurança da Informação</a></li>
+            <li><a href="#" aria-label="Suporte Técnico">Suporte Técnico</a></li>
+            <li><a href="#" aria-label="Consultoria em TI">Consultoria em TI</a></li>
+            <li><a href="#" aria-label="Backup e Recuperação">Backup e Recuperação</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
           <h3 class="footer-title">Empresa</h3>
           <ul class="footer-menu">
-            <li><a href="/assistec-site/#">Sobre nós</a></li>
-            <li><a href="/assistec-site/#">Parceiros</a></li>
-            <li><a href="/assistec-site/#">Casos de Sucesso</a></li>
-            <li><a href="/assistec-site/#">Blog</a></li>
-            <li><a href="/assistec-site/#">Carreiras</a></li>
+            <li><a href="#sobre" aria-label="Sobre nós">Sobre nós</a></li>
+            <li><a href="#parceiros" aria-label="Parceiros">Parceiros</a></li>
+            <li><a href="#" aria-label="Casos de Sucesso">Casos de Sucesso</a></li>
+            <li><a href="#" aria-label="Blog">Blog</a></li>
+            <li><a href="#" aria-label="Carreiras">Carreiras</a></li>
           </ul>
         </div>
 
@@ -427,8 +437,8 @@
       <div class="footer-bottom">
         <p class="copyright">© 2025 Assistec. Todos os direitos reservados.</p>
         <div class="footer-legal">
-          <a href="/#">Política de Privacidade</a>
-          <a href="/#">Termos de Uso</a>
+          <a href="#" aria-label="Política de Privacidade">Política de Privacidade</a>
+          <a href="#" aria-label="Termos de Uso">Termos de Uso</a>
         </div>
       </div>
     </div>
@@ -442,7 +452,6 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
-
 </body>
 
 </html>
