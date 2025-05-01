@@ -241,13 +241,21 @@ h6 {
 }
 
 .mobile-menu-close {
-  align-self: flex-end;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
+  color: var(--text);
   font-size: 1.5rem;
   cursor: pointer;
-  margin-bottom: 2rem;
-  color: var(--text);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.mobile-menu-close:hover {
+  color: var(--primary);
+  transform: rotate(90deg);
 }
 
 .mobile-nav {
@@ -890,7 +898,7 @@ h6 {
   }
 }
 
-/* Dark Mode */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --light: #0f172a;

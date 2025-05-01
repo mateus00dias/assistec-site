@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
     body.style.overflow = "hidden"
   })
 
+  // Adiciona event listener para o botão de fechar
+  if (menuClose) {
+    menuClose.addEventListener("click", () => {
+      mobileMenu.classList.remove("active")
+      body.style.overflow = ""
+    })
+  }
 
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
