@@ -356,17 +356,16 @@
             </iframe>
           </div>
         </div>
-        <form class="contact-form" id="whatsappForm" onsubmit="sendWhatsApp(event)" autocomplete="off">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-
-          <!-- <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required placeholder="Seu e-mail"> -->
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como podemos ajudar?"></textarea>
-
-          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        <form id="whatsappForm" class="contact-form">
+          <div class="contact-form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
         </form>
       </div>
     </div>
@@ -396,7 +395,7 @@
           </div>
         </div>
 
-        <div class="footer-links">
+        <!-- <div class="footer-links">
           <h3 class="footer-title">Serviços</h3>
           <ul class="footer-menu">
             <li><a href="#" aria-label="TI Gerenciada">TI Gerenciada</a></li>
@@ -405,7 +404,7 @@
             <li><a href="#" aria-label="Consultoria em TI">Consultoria em TI</a></li>
             <li><a href="#" aria-label="Backup e Recuperação">Backup e Recuperação</a></li>
           </ul>
-        </div>
+        </div> -->
 
         <div class="footer-links">
           <h3 class="footer-title">Empresa</h3>
