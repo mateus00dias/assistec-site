@@ -6,6 +6,7 @@
   --dark: #ffffff;
   --dark-light: #1e293b;
   --light: #ffffff;
+  --saiba-mais: #0f172a;
   --social-icon: #0f172a;
   --gray: #64748b;
   --gray-light: #cbd5e1;
@@ -20,6 +21,7 @@
 }
 
 [data-theme="dark"] {
+  --saiba-mais: #0f172a;;
   --primary: #06b6d4;
   --primary-dark: #0891b2;
   --primary-light: #67e8f9;
@@ -128,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-outline {
   background-color: white;
-  color: var(--text);
+  color: var(--saiba-mais);
   border: 2px solid var(--gray-light);
 }
 
@@ -879,9 +881,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary);
     transform: scale(1.2);
   }
-}
 
-@media (max-width: 768px) {
   .header-actions {
     display: flex;
     align-items: center;
@@ -964,7 +964,23 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
-
+@media (max-width: 940px) {
+  .main-nav {
+    display: none;
+  }
+  
+  .header-actions .btn {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .theme-toggle {
+    margin-right: 0;
+  }
+}
 @media (min-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr 1fr;
