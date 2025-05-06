@@ -68,12 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     })
   })
+
+  // Função para enviar mensagem pelo WhatsApp
   function sendWhatsApp(event) {
     event.preventDefault();
 
     // Obter os valores do formulário
     const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
     const mensagem = document.getElementById('mensagem').value;
 
     // Número de telefone (use o número da Assistec)
@@ -81,10 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Criar a mensagem formatada
     let mensagemFormatada =
-      `*Contato via Site Assistec*%0A%0A` +
-      `*Nome:* ${nome}%0A` +
-      `*E-mail:* ${email}%0A%0A` +
-      `*Mensagem:*%0A${mensagem}`;
+      `Contato via Site Assistec` +
+      `Nome:* ${nome}` +
+      `Mensagem:${mensagem}`;
 
     // Codificar a mensagem para URL
     mensagemFormatada = encodeURIComponent(mensagemFormatada);
@@ -98,5 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Limpar o formulário
     document.getElementById('whatsappForm').reset();
   }
- 
+  
+  // Adicionar o event listener ao formulário
+  const whatsappForm = document.getElementById('whatsappForm');
+  if (whatsappForm) {
+    whatsappForm.addEventListener('submit', sendWhatsApp);
+  }
 })
