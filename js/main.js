@@ -68,5 +68,35 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     })
   })
+  function sendWhatsApp(event) {
+    event.preventDefault();
 
+    // Obter os valores do formulário
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    // Número de telefone (use o número da Assistec)
+    const telefone = "5533988595641"; // Substitua pelo número correto com código do país
+
+    // Criar a mensagem formatada
+    let mensagemFormatada =
+      `*Contato via Site Assistec*%0A%0A` +
+      `*Nome:* ${nome}%0A` +
+      `*E-mail:* ${email}%0A%0A` +
+      `*Mensagem:*%0A${mensagem}`;
+
+    // Codificar a mensagem para URL
+    mensagemFormatada = encodeURIComponent(mensagemFormatada);
+
+    // Criar o link do WhatsApp
+    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagemFormatada}`;
+
+    // Abrir o WhatsApp em uma nova janela
+    window.open(linkWhatsApp, '_blank');
+
+    // Limpar o formulário
+    document.getElementById('whatsappForm').reset();
+  }
+ 
 })
