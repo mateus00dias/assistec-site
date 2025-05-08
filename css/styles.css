@@ -5,6 +5,7 @@
   --secondary: #f1f5f9;
   --dark: #ffffff;
   --dark-light: #1e293b;
+  --light2: #ffffff;
   --light: #ffffff;
   --saiba-mais: #0f172a;
   --social-icon: #0f172a;
@@ -21,13 +22,15 @@
 }
 
 [data-theme="dark"] {
-  --saiba-mais: #0f172a;;
+  --saiba-mais: #0f172a;
+  ;
   --primary: #06b6d4;
   --primary-dark: #0891b2;
   --primary-light: #67e8f9;
   --secondary: #1e293b;
   --dark: #f1f5f9;
   --dark-light: #e2e8f0;
+  --light2: 255, 255, 255;
   --light: #0f172a;
   --gray: #94a3b8;
   --gray-light: #334155;
@@ -541,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .partner-card {
-  background-color: var(--light);
+  background-color: rgba(var(--light2), 0.08);
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -849,11 +852,11 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  
+
   .partners-grid::-webkit-scrollbar {
     display: none;
   }
-  
+
   .partner-card {
     flex: 0 0 auto;
     width: 80%;
@@ -861,14 +864,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     scroll-snap-align: center;
   }
-  
+
   .partners-nav {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
-  
+
   .partners-nav-dot {
     width: 8px;
     height: 8px;
@@ -876,7 +879,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--gray-light);
     transition: var(--transition);
   }
-  
+
   .partners-nav-dot.active {
     background-color: var(--primary);
     transform: scale(1.2);
@@ -886,11 +889,11 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
   }
-  
+
   .header-actions .btn {
     display: none;
   }
-  
+
   .theme-toggle {
     margin-right: 0;
   }
@@ -929,11 +932,11 @@ h1, h2, h3, h4, h5, h6 {
   .map-container {
     padding-top: 80%;
   }
-  
+
   .map-container iframe {
     max-height: 360px;
   }
-  
+
   .cta-buttons {
     flex-direction: row;
   }
@@ -964,23 +967,25 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+
 @media (max-width: 940px) {
   .main-nav {
     display: none;
   }
-  
+
   .header-actions .btn {
     display: none;
   }
-  
+
   .mobile-menu-toggle {
     display: block;
   }
-  
+
   .theme-toggle {
     margin-right: 0;
   }
 }
+
 @media (min-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr 1fr;
