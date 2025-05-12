@@ -78,13 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const mensagem = document.getElementById('mensagem').value;
 
     // Número de telefone (use o número da Assistec)
-    const telefone = "5533988595641"; // Substitua pelo número correto com código do país
+    const telefone = "5533988488458"; // Substitua pelo número correto com código do país
 
     // Criar a mensagem formatada
-    let mensagemFormatada =
-      `Contato via Site Assistec` +
-      `Nome:* ${nome}` +
-      `Mensagem:${mensagem}`;
+    let mensagemFormatada = `Contato via Site Assistec cliente Nome: *${nome}*Mensagem: ${mensagem}
+`;
 
     // Codificar a mensagem para URL
     mensagemFormatada = encodeURIComponent(mensagemFormatada);
@@ -98,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Limpar o formulário
     document.getElementById('whatsappForm').reset();
   }
-  
+
   // Adicionar o event listener ao formulário
   const whatsappForm = document.getElementById('whatsappForm');
   if (whatsappForm) {
