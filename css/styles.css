@@ -440,6 +440,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
 }
+.solutions-buttons{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
 .solutions-list {
   margin: 1.5rem 0;
