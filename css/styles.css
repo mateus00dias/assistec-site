@@ -5,7 +5,7 @@
   --secondary: #f1f5f9;
   --dark: #ffffff;
   --dark-light: #1e293b;
-  --light2: #ffffff;
+  --light2: 255, 255, 255;
   --light: #ffffff;
   --saiba-mais: #0f172a;
   --social-icon: #0f172a;
@@ -23,7 +23,6 @@
 
 [data-theme="dark"] {
   --saiba-mais: #0f172a;
-  ;
   --primary: #06b6d4;
   --primary-dark: #0891b2;
   --primary-light: #67e8f9;
@@ -74,7 +73,12 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -106,6 +110,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .highlight {
   color: var(--primary-light);
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn {
@@ -161,17 +176,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline-light:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
-}
-
-.reveal-element {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal-element.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .site-header {
@@ -237,14 +241,6 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-.mobile-menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  cursor: pointer;
-  color: var(--text);
-}
-
 .theme-toggle {
   background: none;
   border: none;
@@ -258,6 +254,14 @@ h1, h2, h3, h4, h5, h6 {
 .theme-toggle:hover {
   color: var(--primary);
   transform: rotate(30deg);
+}
+
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text);
 }
 
 .mobile-menu {
@@ -440,7 +444,10 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
 }
-.solutions-buttons{
+.solutions-content2 {
+  margin-top: 3rem;
+}
+.solutions-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
@@ -541,15 +548,36 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--secondary);
 }
 
+.partners {
+  padding: 5rem 0;
+  background-color: var(--secondary);
+}
+
 .partners-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+  justify-content: flex-start;
+  gap: 1rem; /* Espaçamento entre os cards */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory; /* Faz a rolagem "grudar" nos cards */
+  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
+  scrollbar-width: none; /* Remove a barra de rolagem no Firefox */
+  margin: 0 auto; /* Centraliza o grid completo, se houver espaço */
+}
+
+/* Esconde a barra de rolagem no Webkit (Chrome, Safari) */
+.partners-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .partner-card {
-  background-color: rgba(var(--light2), 0.08);
+  flex: 0 0 auto; /* Não cresce, não encolhe, usa largura base */
+  width: calc(100% - 2rem); /* No mobile, um item ocupa quase toda a largura do container */
+  max-width: 300px; /* Limite de largura para evitar cards muito grandes em mobile */
+  min-width: 250px; /* Largura mínima para evitar que encolha demais */
+  scroll-snap-align: center; /* Alinha o card ao centro ao rolar no mobile */
+  background-color: rgba(var(--light2), 0.08); /* Usando light2 para rgba */
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -557,20 +585,41 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 250px;
+  height: 200px; /* Altura fixa para o card */
 }
 
 .partner-card img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-
 }
 
 .partner-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Efeito de zoom no hover */
   box-shadow: var(--shadow-md);
+}
+
+.partners-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.partners-nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+  transition: background 0.2s, opacity 0.2s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.partners-nav-dot.active {
+  background: #06b6d4;
+  opacity: 1;
 }
 
 .cta {
@@ -630,7 +679,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
 }
 
@@ -682,6 +731,10 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
+.contact-form button {
+  align-self: flex-start;
+}
+
 .map-container {
   position: relative;
   overflow: hidden;
@@ -697,10 +750,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.contact-form button {
-  align-self: flex-start;
 }
 
 .site-footer {
@@ -846,50 +895,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 767px) {
-  .partners-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 1rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .partners-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .partner-card {
-    flex: 0 0 auto;
-    width: 80%;
-    max-width: 250px;
-    margin: 0 auto;
-    scroll-snap-align: center;
-  }
-
-  .partners-nav {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .partners-nav-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--gray-light);
-    transition: var(--transition);
-  }
-
-  .partners-nav-dot.active {
-    background-color: var(--primary);
-    transform: scale(1.2);
-  }
-
   .header-actions {
     display: flex;
     align-items: center;
@@ -971,6 +976,22 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-menu-toggle {
     display: none;
   }
+
+ .partners-grid {
+    gap: 1.5rem; /* Espaçamento entre os cards */
+    padding: 1.5rem 0; /* Ajusta padding */
+    justify-content: center; /* Centraliza o flexbox */
+  }
+
+  .partner-card {
+    width: calc((100% / 2) - 0.75rem); /* Para 2 itens por linha no tablet, considerando o gap */
+    max-width: none; /* Remove o max-width */
+    height: 220px; /* Ajusta altura */
+    padding: 2rem;
+    scroll-snap-align: start; /* Alinha o início do grupo de cards ao rolar */
+  }
+
+
 }
 
 @media (max-width: 940px) {
@@ -995,5 +1016,16 @@ h1, h2, h3, h4, h5, h6 {
   .hero-content {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+
+  .partners-grid {
+    gap: 2rem; /* Mais espaçamento */
+    padding: 2rem 0;
+  }
+
+  .partner-card {
+    width: calc((100% / 3) - (2rem * 2 / 3)); /* Para 3 itens por linha, considerando o gap */
+    height: 240px;
+    padding: 2.5rem;
   }
 }
