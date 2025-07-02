@@ -46,6 +46,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .carousel-container {
   position: relative;
   max-width: 900px;
@@ -58,7 +59,8 @@
   position: relative;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1; /* opcional: define proporção, remove se não quiser */
+  aspect-ratio: 1 / 1;
+  /* opcional: define proporção, remove se não quiser */
 }
 
 .carousel-image {
@@ -110,6 +112,7 @@
     padding: 8px 10px;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -119,7 +122,8 @@ body {
   color: var(--text);
   line-height: 1.6;
   background-color: var(--light);
-  width: 100%; /* compensação proporcional do scale */
+  width: 100%;
+  /* compensação proporcional do scale */
 }
 
 img {
@@ -508,9 +512,7 @@ h6 {
   height: 100%;
   object-fit: cover;
 }
-.solutions-content2 {
-  margin-top: 3rem;
-}
+
 .solutions-buttons {
   display: flex;
   gap: 1rem;
@@ -623,7 +625,7 @@ h6 {
   justify-content: flex-start;
   gap: 1rem;
   overflow-x: auto;
-  min-width: 100%; /* <- importante para forçar o grid a ocupar espaço horizontal total */
+  min-width: 100%;
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -636,12 +638,18 @@ h6 {
 }
 
 .partner-card {
-  flex: 0 0 auto; /* Não cresce, não encolhe, usa largura base */
-  width: calc(100% - 2rem); /* No mobile, um item ocupa quase toda a largura do container */
-  max-width: 300px; /* Limite de largura para evitar cards muito grandes em mobile */
-  min-width: 250px; /* Largura mínima para evitar que encolha demais */
-  scroll-snap-align: center; /* Alinha o card ao centro ao rolar no mobile */
-  background-color: rgba(var(--light2), 0.08); /* Usando light2 para rgba */
+  flex: 0 0 auto;
+  /* Não cresce, não encolhe, usa largura base */
+  width: calc((100% - 40px) / 3);
+  /* 40px = 2 gaps de 20px */
+  max-width: 300px;
+  /* Limite de largura para evitar cards muito grandes em mobile */
+  min-width: 250px;
+  /* Largura mínima para evitar que encolha demais */
+  scroll-snap-align: center;
+  /* Alinha o card ao centro ao rolar no mobile */
+  background-color: rgba(var(--light2), 0.08);
+  /* Usando light2 para rgba */
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -649,8 +657,10 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px; /* Altura fixa para o card */
+  height: 200px;
+  /* Altura fixa para o card */
 }
+
 
 .partner-card img {
   width: 100%;
@@ -659,7 +669,8 @@ h6 {
 }
 
 .partner-card:hover {
-  transform: scale(1.05); /* Efeito de zoom no hover */
+  transform: scale(1.05);
+  /* Efeito de zoom no hover */
   box-shadow: var(--shadow-md);
 }
 
@@ -836,8 +847,8 @@ h6 {
   margin-bottom: 1rem;
   filter: brightness(2);
 }
-\1
-.footer-description {
+
+\1 .footer-description {
   font-size: 0.875rem;
   margin-bottom: 1.5rem;
 }
@@ -959,6 +970,10 @@ h6 {
 }
 
 @media (max-width: 767px) {
+  .solutions-content2 {
+    margin: 2rem;
+  }
+
   .header-actions {
     display: flex;
     align-items: center;
@@ -1041,24 +1056,35 @@ h6 {
     display: none;
   }
 
- .partners-grid {
-    gap: 1.5rem; /* Espaçamento entre os cards */
-    padding: 1.5rem 0; /* Ajusta padding */
-    justify-content: center; /* Centraliza o flexbox */
+  .partners-grid {
+    gap: 1.5rem;
+    /* Espaçamento entre os cards */
+    padding: 1.5rem 0;
+    /* Ajusta padding */
+    justify-content: center;
+    /* Centraliza o flexbox */
   }
 
   .partner-card {
-    width: calc((100% / 2) - 0.75rem); /* Para 2 itens por linha no tablet, considerando o gap */
-    max-width: none; /* Remove o max-width */
-    height: 220px; /* Ajusta altura */
+    width: calc((100% / 2) - 0.75rem);
+    /* Para 2 itens por linha no tablet, considerando o gap */
+    max-width: none;
+    /* Remove o max-width */
+    height: 220px;
+    /* Ajusta altura */
     padding: 2rem;
-    scroll-snap-align: start; /* Alinha o início do grupo de cards ao rolar */
+    scroll-snap-align: start;
+    /* Alinha o início do grupo de cards ao rolar */
   }
 
 
 }
 
 @media (max-width: 940px) {
+  .solutions-content2 {
+    margin: 2rem;
+  }
+
   .main-nav {
     display: none;
   }
@@ -1083,13 +1109,17 @@ h6 {
   }
 
   .partners-grid {
-    gap: 2rem; /* Mais espaçamento */
+    gap: 2rem;
     padding: 2rem 0;
+    justify-content: flex-start;
+    /* Alinha à esquerda */
   }
 
   .partner-card {
-    width: calc((100% / 3) - (2rem * 2 / 3)); /* Para 3 itens por linha, considerando o gap */
+    width: calc((100% - 4rem) / 3);
+    /* 3 cards com gap de 2rem */
     height: 240px;
     padding: 2.5rem;
+    scroll-snap-align: start;
   }
 }

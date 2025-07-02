@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function initializePartnerCarousel() {
+ function initializePartnerCarousel() {
     if (window.partnerCarouselInitialized) return;
 
     console.log("Inicializando novo carrossel de parceiros");
@@ -271,3 +271,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(initializePartnerCarousel, 500);
 });
+
