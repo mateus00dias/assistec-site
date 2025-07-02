@@ -46,7 +46,70 @@
   padding: 0;
   box-sizing: border-box;
 }
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 60px auto;
+  overflow: hidden;
+  text-align: center;
+}
 
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* opcional: define proporção, remove se não quiser */
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .nav-btn {
+    font-size: 24px;
+    padding: 8px 10px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -556,15 +619,15 @@ h6 {
 
 .partners-grid {
   display: flex;
-  flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  gap: 1rem; /* Espaçamento entre os cards */
-  overflow-x: auto; /* Permite rolagem horizontal */
+  gap: 1rem;
+  overflow-x: auto;
+  min-width: 100%; /* <- importante para forçar o grid a ocupar espaço horizontal total */
   padding: 1rem 0;
-  scroll-snap-type: x mandatory; /* Faz a rolagem "grudar" nos cards */
-  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-  scrollbar-width: none; /* Remove a barra de rolagem no Firefox */
-  margin: 0 auto; /* Centraliza o grid completo, se houver espaço */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 /* Esconde a barra de rolagem no Webkit (Chrome, Safari) */
